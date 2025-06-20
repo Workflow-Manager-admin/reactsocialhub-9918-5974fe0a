@@ -443,6 +443,12 @@ body, .shub-app {
 .auth-card form {
   display: flex; flex-direction: column; gap: 14px;
 }
+.input-error {
+  color: #ff425b;
+  font-size: 0.97rem;
+  margin: 3px 0 2px 1px;
+  font-family: inherit;
+}
 .auth-card input[type="email"],
 .auth-card input[type="password"],
 .auth-card input[type="text"] {

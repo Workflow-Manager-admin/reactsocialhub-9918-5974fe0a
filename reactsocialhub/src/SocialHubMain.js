@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SocialHubMain.css';
+import AuthModal from './AuthModal';
 
 // Demo/mock data
 const DEMO_USERS = [
@@ -55,7 +56,7 @@ function SocialHubMain() {
   const [newPost, setNewPost] = useState('');
   const [currentUser, setCurrentUser] = useState(DEMO_USERS[0]);
   const [notifOpen, setNotifOpen] = useState(false);
-  const [authMode, setAuthMode] = useState('login'); // 'login' | 'signup'
+  const [authMode, setAuthMode] = useState('login'); // 'login' | 'signup' | 'mobile'
   const [showAuth, setShowAuth] = useState(false);
   const [notificationList, setNotificationList] = useState([
     { id: 1, type: 'like', message: "Brooklyn liked your post", read: false, time: "now" }
@@ -187,7 +188,7 @@ function SocialHubMain() {
               <div className="sidebar-handle">@{currentUser.username}</div>
             </div>
           </div>
-          <button className="btn btn-logout" onClick={() => setShowAuth(true)}>Logout</button>
+          <button className="btn btn-logout" onClick={() => {setAuthMode('login'); setShowAuth(true);}}>Logout</button>
         </div>
         <div className="sidebar-section-title">People</div>
         <div>
@@ -202,7 +203,7 @@ function SocialHubMain() {
         <div className="sidebar-footer">
           <button
             className="btn btn-create"
-            onClick={() => setShowAuth(true)}
+            onClick={() => {setAuthMode('login'); setShowAuth(true);}}
             style={{ fontSize: '0.9rem', marginTop: 8 }}
           >
             {currentUser ? 'Switch Account' : 'Sign In'}
@@ -221,7 +222,7 @@ function SocialHubMain() {
               <span role="img" aria-label="bell">🔔</span>
               {notificationList.find(n => !n.read) ? <span className="notif-badge" /> : null}
             </button>
-            <button className="icon-btn" title="Profile" onClick={() => setShowAuth(true)}>
+            <button className="icon-btn" title="Profile" onClick={() => {setAuthMode('login'); setShowAuth(true);}}>
               <img src={currentUser.avatar} alt="" style={{ width: 28, height: 28, borderRadius: 16, border: '1px solid #444' }}/>
             </button>
           </div>
@@ -264,7 +265,10 @@ function SocialHubMain() {
       />
       {/* Auth Modal */}
       {showAuth && (
-        <AuthModal mode={authMode} onClose={() => setShowAuth(false)} />
+        <AuthModal
+          mode={authMode}
+          onClose={() => setShowAuth(false)}
+        />
       )}
     </div>
   );
