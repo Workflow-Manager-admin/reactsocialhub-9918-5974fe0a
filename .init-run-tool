@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/reactsocialhub-9918-5974fe0a/reactsocialhub"
+}
