@@ -33,3 +33,19 @@ cached modules 1.26 MiB [cached] 41 modules
 runtime modules 27.5 KiB 14 modules
 ./src/App.js 2.3 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 95 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.cc01f0e1cb14e368f2b6.hot-update.js 47.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.cc01f0e1cb14e368f2b6.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.43 MiB main.cc01f0e1cb14e368f2b6.hot-update.js 47.5 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 31.4 KiB
+  modules by path ./src/*.js 19 KiB
+    ./src/App.js 330 bytes [built] [code generated]
+    ./src/SocialHubMain.js 18.7 KiB [built] [code generated]
+  modules by path ./src/*.css 12.4 KiB
+    ./src/SocialHubMain.css 2.25 KiB [built] [code generated]
+    ./node_modules/css-loader/dist/cjs.js!./src/SocialHubMain.css 10.1 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 244 ms
